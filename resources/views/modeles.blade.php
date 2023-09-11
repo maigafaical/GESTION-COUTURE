@@ -1,46 +1,36 @@
 @extends('layouts.mainlayout')
 
 @section('content')
-    
-<form method="post" action="insertion_clients.php">
-    <section class="contenair p-2 bg-danger mt-3 m-3">
-        <div class="row mt-3">
 
-            <div class="row mt-3">
-                <div class="col-lg-6">
-                    <input type="text" name="nom" class="form-control" placeholder="nom">
-                </div>
-                <div class="col-lg-6">
-                    <input type="text" name="prenom" class="form-control" placeholder="prenom">
-                </div>
+    <body style="background-color: #0BE0FD">
+
+        <a href="{{ route('form_modeles') }}"class="btn btn-danger mt-3">Nouveau+</a>
+
+        <div class="container mt-3">
+
+
+
+            <div style="text-align: center">
+                <h4>LISTE DES MODELES</h4>
             </div>
 
-            <div class="row mt-3">
-                <div class="col-lg-6">
-                <input id = "input-b2" name = "input-b2" type = "file" class = "file form-control" data-show-preview = "false" >
-                </div>
-                <div class="col-lg-6">
-                    <label class="text-danger" for="" required>utilisateur</label>
-                    <select class="form-control" name="user">
-                        <option value="">choisissez un user...</option>
-                    </select>
-                </div>
-            </div>
+            <section class="contenair mt-1">
+                <table class="table table-bordered">
 
-            
+                    <tbody>
+                        <tr>
 
-            <div class="row m-3">
-                <div class="col-6">
-                    <div class="col-auto">
-                        <button type="submit" class="btn btn-dark text-light mb-2">Ajouter</button>
-                    </div>
-                </div>
-            </div>
-    </section>
-</form>
+                            <td>type_modele</td>
+                            <td>nom_modele</td>
+                            <td>image</td>
+
+
+                        </tr>
+                    </tbody>
 
 
 
 
-
+                </table>
+            </section>
 @endsection

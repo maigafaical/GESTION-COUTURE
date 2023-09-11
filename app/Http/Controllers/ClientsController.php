@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Client;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\ClientsControllerform_clients;
+use App\Models\Clients;
 
 
 
@@ -34,22 +35,28 @@ class ClientsController extends Controller
     }
 
    // ...
+   public function  insertion_clients_traitement(Request $request)
 
-public function store(Request $request)
-{
-    $client = new Client;
-    $client->nom = $request->input('nom');
-    $client->prenom = $request->input('prenom');
-    $client->email = $request->input('adresse');
-    $client->email = $request->input('telephone');
-    
-    // Ajoutez d'autres champs si nécessaire
-    
-    $client->save();
+   {
+    $request->validate([
 
-    // Redirigez l'utilisateur ou effectuez une action appropriée après l'enregistrement.
+        'nom'=>'required',
+        'prenom'=>'required',
+        'adresse'=>'required',
+        'telephone'=>'required',
+        
+    ]);
+
+    $clients = new Clients();
+    $clients->nom = $request->nom;
+    $clients->prenom = $request->prenom;
+    $clients->adresse = $request->adresse;
+    $clients->telephone = $request->telephone;
+    $clients->save();
+
+    return redirect('ajout_clients')->with('status', 'Le client a été ajouté avec succes.');
+
 }
-
 
     /**
      * Display the specified resource.

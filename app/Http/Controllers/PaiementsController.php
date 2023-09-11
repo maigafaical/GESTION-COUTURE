@@ -25,17 +25,34 @@ class PaiementsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function form_paiements(Request $request)
     {
-        //
+        return view('ajout_paiements');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function insertionpaiments(Request $request)
     {
-        //
+        $request->validate([
+
+            'montant'=>'required',
+            'date_depot'=>'required',
+            'date_recuperation'=>'required',
+         
+           
+        ]);
+
+        $paiements = new paiements();
+        $paiements->montant = $request->montant;
+        $paiements->date_depot = $request->date_depot;
+        $paiements->date_recuperation = $request->date_recuperation;
+       $paiements->save();
+
+       return redirect('ajout_depenses')->with('status', 'Le paiement a été ajouté avec succes.');
+    
+
     }
 
     /**

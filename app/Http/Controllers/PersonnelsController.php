@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\personnelsControllerform_personnels;
+use App\Models\personnels;
 
 class PersonnelsController extends Controller
 {
@@ -19,22 +21,42 @@ class PersonnelsController extends Controller
      */
     public function personnels()
     {
-        return('personnels');
+        return view('personnels');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function form_personnels(Request $request)
     {
-        //
+        return view('ajout_personnels');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function insertpersonnels(Request $request)
     {
+        $request->validate([
+
+            'nom'=>'required',
+            'prenom'=>'required',
+            'adresse'=>'required',
+            'telephone'=>'required',
+            'poste'=>'required',
+            
+        ]);
+    
+        $personnels = new personnels();
+        $personnels->nom = $request->nom;
+        $personnels->prenom = $request->prenom;
+        $personnels->adresse = $request->adresse;
+        $personnels->telephone = $request->telephone;
+        $personnels->poste = $request->poste;
+        $personnels->save();
+    
+        return redirect('ajout_personnels')->with('status', 'Le personnel a été ajouté avec succes.');
+    
         //
     }
 

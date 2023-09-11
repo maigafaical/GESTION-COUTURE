@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\depensesControllerform_depenses;
+use App\Models\depenses;
+
+
 
 class DepensesController extends Controller
 {
@@ -25,19 +29,37 @@ class DepensesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function form_depenses(Request $request)
     {
-        //
+        return view('ajout_depenses');
     }
+
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function insertdepenses(Request $request)
     {
-        //
-    }
+    $request->validate([
 
+            'libelle'=>'required',
+            'montant'=>'required',
+            'date'=>'required',
+         
+           
+        ]);
+
+        $depenses = new depenses();
+        $depenses->libelle = $request->libelle;
+        $depenses->montant = $request->montant;
+        $depenses->date = $request->date;
+       $depenses->save();
+
+       return redirect('ajout_depenses')->with('status', 'La dépense a été ajouté avec succes.');
+    
+    }
+ 
+   
     /**
      * Show the form for editing the specified resource.
      */

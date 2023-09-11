@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Coutures extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'montant',
+        'date_depot',
+        'date_recuperation',
+       
+];
 }

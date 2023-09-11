@@ -16,14 +16,8 @@ return new class extends Migration
             $table->string('libelle');
             $table->Integer('montant');
             $table->date('date');
-            $table->unsignedBigInteger('users_id')->unsigned();
-            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->unsignedBigInteger('personnels_id')->unsigned();
-            $table->foreign('personnels_id')->references('id')->on('personnels')->onDelete('cascade')->onUpdate('cascade');
-
-
-
             $table->timestamps();
+           
         });
     }
 

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\ModelesControllerform_modeles;
+use App\Models\Modeles;
 class ModelesController extends Controller
 {
     /**
@@ -25,17 +26,30 @@ class ModelesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function form_modeles(Request $request)
     {
-        //
+        return view('ajout_modeles');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function insermodeles(Request $request)
     {
-        //
+    $request->validate([
+
+        'nom_modele'=>'required',
+        'type_modele'=>'required',
+        'image'=>'required',
+    ]);    
+     $modeles = new modeles();
+     $modeles->nom_modele = $request->nom_modele;
+     $modeles->type_modele = $request->type_modele;
+     $modeles->image= $request->image;
+     $clients->save();
+
+    return redirect('ajout_modeles')->with('status', 'Le modele a été ajouté avec succes.');
+  
     }
 
     /**

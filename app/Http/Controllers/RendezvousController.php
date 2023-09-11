@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\rendezvousControllerform_rendezvous;
+use App\Models\rendezvous;
 
 class RendezvousController extends Controller
 {
@@ -19,23 +21,37 @@ class RendezvousController extends Controller
      */
     public function rendezvous()
     {
-        return view('rendez-vous');
+        return view('rendezvous');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function form_rendezvous(Request $request)
     {
-        //
+        return view('ajout_rendezvous');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        //
+    public function insertrendezvous(Request $request)
+    { 
+        $request->validate([
+
+        'libelle'=>'required',
+        'date_rdv'=>'required',
+
+    ]);
+    
+    $rendezvous = new rendezvous();
+    $rendezvous->libelle = $request->libelle;
+    $rendezvous->date_rdv = $request->date_rdv;
+
+    return redirect('ajout_rendezvous')->with('status', 'Le rendez-vous a été ajouté avec succes.');
+    
+    //
+
     }
 
     /**

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\CouturesControllerform_coutures;
+use App\Models\Coutures;
 
 class CouturesController extends Controller
 {
@@ -25,17 +27,33 @@ class CouturesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
+    public function form_coutures(Request $request)
+    {   
+        return view('ajout_coutures');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function insertcoutures(Request $request)
     {
-        //
+        $request->validate([
+
+            'montant'=>'required',
+            'date_depot'=>'required',
+            'date_recuperacation'=>'required',
+        ]);
+    
+        $coutures = new coutures();
+        $cuoutures->montant = $request->nom;
+        $coutures->date_depot = $request->prenom;
+        $coutures->date_recuperation = $request->adresse;
+    
+        $coutures->save();
+    
+        return redirect('ajout_coutures')->with('status', 'une couture a été ajouté avec succes.');
+
+
     }
 
     /**

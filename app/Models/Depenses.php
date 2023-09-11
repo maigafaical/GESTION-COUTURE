@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Depenses extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'libelle',
+        'montant',
+        'date',
+        
+];
 }

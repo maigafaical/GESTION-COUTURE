@@ -2,12 +2,17 @@
 
 @section('content')
 
+<body style="background-color: #0BE0FD">
+
+  <a href="{{ route('form_clients') }}"class="btn btn-danger mt-3">Nouveau+</a>
+
     <div class="container mt-3">
         
-      <a href="{{ route('form_clients') }}"class="btn btn-danger">Nouveau+</a>
+     
 
-      <div class="contenair bg-danger text-light text-center mt-5">LISTE DES CLIENTS
-      </div>
+      <div style="text-align: center">
+        <h4>LISTE DES CLIENTS</h4>
+           </div>
 
         <section class="contenair mt-1">
           <table class="table table-bordered">
@@ -19,7 +24,7 @@
                   <td>prenom</td>
                   <td>adresse</td>
                   <td>telephone</td>
-                   <td>utilisateur</td>
+                
 
 
                 </tr>
@@ -29,8 +34,8 @@
             
            
           </table>
-        </section>   
-
+      </section>   
+   
 
 
 

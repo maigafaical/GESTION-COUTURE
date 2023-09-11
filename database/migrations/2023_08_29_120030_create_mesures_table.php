@@ -17,30 +17,17 @@ return new class extends Migration
             $table->Integer('taille_robe');
             $table->Integer('bassins');
             $table->Integer('longueur');
-            $table->Integer('dos');
             $table->Integer('genoux');
             $table->Integer('manches');
             $table->Integer('hanches');
-            $table->Integer('cuisses');
-            $table->Integer('cou');
             $table->Integer('epaules');
             $table->Integer('poignets');
             $table->Integer('tour_ventre');
-            $table->Integer('demi_ourlet');
-            $table->Integer('entrejambe');
             $table->Integer('longueur_veste');
             $table->Integer('longueur_pantalon');
-            $table->Integer('longueur_gilet');
             $table->Integer('mollet');
-            $table->Integer('coude'); 
             $table->date('date_mesure');
-            $table->unsignedBigInteger('clients_id')->unsigned();
-            $table->foreign('clients_id')->references('id')->on('clients')->onDelete('cascade')->onUpdate('cascade');
-            $table->unsignedBigInteger('modeles_id')->unsigned();
-            $table->foreign('modeles_id')->references('id')->on('modeles')->onDelete('cascade')->onUpdate('cascade');
-            $table->unsignedBigInteger('users_id')->unsigned();
-            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-
+           
 
 
              $table->timestamps();
