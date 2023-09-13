@@ -1,6 +1,6 @@
 
 <ul class=" mt-5 text-light text-center" style="height: 90vh">
-    <span class="dropdown-item-text mb-3">MENU</span></li>
+    <h2 class="dropdown-item-text mb-3">MENU</h2></li>
    <a class="dropdown-item mb-3" href="{{route('clients')}}">CLIENTS</a>
     
     <a class="dropdown-item mb-3" href="{{route('modeles')}}">MODELES</a>

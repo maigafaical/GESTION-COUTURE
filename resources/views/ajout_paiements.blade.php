@@ -21,7 +21,7 @@
            </div>
   
     <div>
-        <form method="POST" action="insertpaiements">
+        <form method="POST" action="insertionpaiements">
             @csrf
 
             <section class="">
@@ -40,13 +40,17 @@
                         </div>
 
 
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 mt-3">
                             <input type="int" name="reste" class="form-control" placeholder="reste">
                         </div>
 
-                        <div class="col-lg-6">
-                            <input type="texte" name="texte" class="form-control" placeholder="mode_paiment">
+                        <div class="col-lg-6 mt-3">
+                            <input type="texte" name="mode_paiement" class="form-control" placeholder="mode_paiement">
                         </div>
+                        <div class="col-lg-6 mt-3">
+                            <input type="date" name="date_paiement" class="form-control" placeholder="date_paiement">
+                        </div>
+
 
                             <div class="row m-3">
                                 <div class="col-3">

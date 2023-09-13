@@ -4,10 +4,10 @@
 
 
     <div style="text-align: center">
-        <h1>LISTE DES DEPENSES </h1>
+        <h1>LISTE DES PAIEMENTS </h1>
            </div>
 
-           <a href="{{ route('form_depenses') }}"class="btn btn-danger">Nouveau+</a>
+           <a href="{{ route('form_paiements') }}"class="btn btn-danger">Nouveau+</a>
 
 
     <section class="contenair mt-2">
@@ -15,14 +15,36 @@
 
          <tbody>
               <tr>
-                <td>montant</td>
-                <td>date_depot</td>
-                <td>date_recuperation</td>
-                
+                <td>Numero</td>
+                <td>Montant</td>
+                <td>Acompte</td>
+                <td>Reste</td>
+                <td>Mode de paiements</td>
+                <td>Date de paiements</td>
+                <td>Actions</td>
+
               
 
                 
               </tr>
+            </tbody>
+
+
+            <tbody>
+              @foreach ($paiements as $pai)
+                  <tr>
+                      <td>{{ $pai->id }}</td>
+                      <td>{{ $pai->montant }}</td>
+                      <td>{{ $pai->acompte }}</td>
+                      <td>{{ $pai->reste }}</td>
+                      <td>{{ $pai->mode_paiement }}</td>
+                      <td>{{ $pai->date_paiement }}</td>
+                      <td>
+                        <a href="#"{{ $pai->id }} class="btn btn-info">Modifier</a>
+                        <a href="#"{{ $pai->id }} class="btn btn-danger">supprimer</a>
+                      </td>
+                  </tr>
+              @endforeach
             </tbody>
              
             

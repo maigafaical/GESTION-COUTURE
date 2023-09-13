@@ -16,7 +16,11 @@ return new class extends Migration
             $table->Integer('montant');
             $table->date('date_depot');
             $table->date('date_recuperation');
-
+            $table->unsignedBigInteger('modeles_id')->unsigned();
+            $table->foreign('modeles_id')->references('id')->on('modeles')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('clients_id')->unsigned();
+            $table->foreign('clients_id')->references('id')->on('clients')->onDelete('cascade')->onUpdate('cascade');
+            schema::enableForeignKeyContraints();
 
             $table->timestamps();
         });

@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Paiements extends Model
+class Rendezvou extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'montant',
-        'acompte',
-        'reste',
-        'mode_paiement',
-      
-];
+        'libelle',
+        'date_rdv',  
+    ];
+
 }

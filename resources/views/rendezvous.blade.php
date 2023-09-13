@@ -15,15 +15,34 @@
 
          <tbody>
               <tr>
-                
+                <td>Numero</td>
                 <td>Libelle</td>
                 <td>Date_rdv</td>
-                
+                <td>Actions</td>
               
 
                 
               </tr>
             </tbody>
+
+
+            <tbody>
+              @foreach ($rendezvous as $rdv)
+                  <tr>
+                      <td>{{ $rdv->id }}</td>
+                      <td>{{ $rdv->libelle }}</td>
+                      <td>{{ $rdv->date_rdv }}</td>
+                     <td>
+                      <a href="#"{{ $rdv->id }} class="btn btn-info">Modifier</a>
+                        <a href="#"{{ $rdv->id }} class="btn btn-danger">supprimer</a>
+                      </td>
+                  </tr>
+              @endforeach
+            </tbody>
+
+      </table>
+  </section>
+
              
             
            

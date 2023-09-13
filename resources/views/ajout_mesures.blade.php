@@ -22,77 +22,116 @@
         <h3>AJOUTER MESURES</h3>
            </div>
           
-            <section class=" mt-3 m-3">
-                <div class="row mt-3">
-                  <form method="POST" action="ajout_mesures" >
-                    @csrf
+           <form method="POST" action="insertionmesures">
+            @csrf
+
+            <section class="">
+               
                    
-                        <label for="inputPoitrine" class="form-label">Poitrine</label>
-                        <input type="number" class="form-control" id="number">
-                      </div>
-                      <div class="col-md-3">
-                        <label for="inputTaille_robe" class="form-label">Taille_robe</label>
-                        <input type="number" class="form-control" id="number">
-                      </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-6 mt-3">
+                          <input type="number" name="poitrine" class="form-control" placeholder="Poitrine">
+                        </div>
+                      
 
-                      <div class="col-md-3">
-                        <label for="inputBassins" class="form-label">Bassins</label>
-                        <input type="number" class="form-control" id="number">
-                      </div>
-                      <div class="col-md-3">
-                        <label for="inputLongueur" class="form-label">Longueur</label>
-                        <input type="number" class="form-control" id="number">
-                      </div>
+                        <div class="col-lg-6 mt-3">
+                          <input type="number" name="taille_robe" class="form-control" placeholder="Taille-robe">
+                        </div>
+                    
 
-                     
-                      <div class="col-md-3">
-                        <label for="inputGenoux" class="form-label">Genoux</label>
-                        <input type="in" class="form-control" id="int">
-                      </div>
+                    
+                        <div class="col-lg-6 mt-3">
+                          <input type="number" name="bassins" class="form-control" placeholder="Bassins">
+                        </div>
+                        <div class="col-lg-6 mt-3">
+                          <input type="number" name="longueur" class="form-control" placeholder="Longueur">    
+                         </div>
 
-                      <div class="col-md-3">
-                        <label for="inputManche" class="form-label">Manches</label>
-                        <input type="int" class="form-control" id="int">
-                      </div>
-                      <div class="col-md-3">
-                        <label for="inputHanches" class="form-label">Hanches</label>
-                        <input type="int" class="form-control" id="int">
-                      </div>
+                         
+                          <div class="col-lg-6 mt-3">
+                            <input type="number" name="genoux" class="form-control" placeholder="Genoux">
+                          </div>
+                          
+                          <div class="col-lg-6 mt-3">
+                            <input type="number" name="manches" class="form-control" placeholder="Manches">    
+                           </div>
+                          </div>
 
-                    <div class="col-md-3">
-                        <label for="Epaules" class="form-label">Epaules</label>
-                        <input type="number" class="form-control" id="number">
-                      </div>
+                           
+                           <div class="row mt-3">
+                           <div class="col-lg-6">
+                            <input type="number" name="hanches" class="form-control" placeholder="Hanches">    
+                           </div>
+  
+                           
+                            <div class="col-lg-6 mt-3">
+                              <input type="number" name="epaules" class="form-control" placeholder="Epaules"> 
+                            </div>
+                            
+                            <div class="col-lg-6 mt-3">
+                              <input type="number" name="poignets" class="form-control" placeholder="Poignets">    
+                             </div>
 
-                      <div class="col-md-3">
-                        <label for="Epaules" class="form-label">poignets</label>
-                        <input type="number" class="form-control" id="number">
-                      </div>
+                             
+                              <div class="col-lg-6 mt-3">
+                                <input type="number" name="tour_ventre" class="form-control" placeholder="Tour-ventre"> 
+                              </div>
+
+                            
+                                <div class="col-lg-6 mt-3">
+                                  <input type="number" name="longueur_veste" class="form-control" placeholder="Longueur-veste"> 
+                                </div>
+
+                              
+                                  <div class="col-lg-6 mt-3">
+                                    <input type="date" name="date_" class="form-control" placeholder="Date"> 
+                                  </div>
+
+                                  <div class="col-lg-6 mt-3">
+                                    <div class="form-group">
+                                        <label for="">Choisir le client</label>
+                                        <select name="clients_id " class="form-control" required>
+                                            <option value="">Choisissez le client</option>
+                                            @foreach ($clients as $cli)
+                                                <option value="{{ $cli->id }}">{{ $cli->nom }}</option>
+                                                <option value="{{ $cli->id }}">{{ $cli->prenom }}</option>
+                                            @endforeach
+                                        </select>
+                          </div>
+  
 
 
-                     
-                      <div class="col-md-3">
-                        <label for="inputTour_ventre" class="form-label">Tour_ventre</label>
-                        <input type="number" class="form-control" id="number">
-                      </div>
 
-                      <div class="col-md-3">
-                        <label for="inputLongueur_veste" class="form-label">Longueur_veste</label>
-                        <input type="number" class="form-control" id="number">
-                      </div>
-                     
-                      <label for="inputdate" class="form-label">Date_mesure</label>
-                      <input type="date" class="form-control" id="date">
-                    </div>
+                        </div>
 
-            
+
+
+
+
+
+
+
+
+
+
+
+                         
+                    
+
+                   
+                    <div class="row m-3">
+                        <div class="col-3">
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-danger text-light mb-2">Ajouter</button>
+                            </div>
+                        </div>
                     </div>
             </section>
-            <div>
-                <button type="button" class="btn btn-danger">ENREGISTRE</button>
-  </div>
+        </form>
 
-</section>
+ 
+    </div>
+
 
 
 

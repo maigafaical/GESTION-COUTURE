@@ -10,7 +10,7 @@ class Rendezvous extends Model
     use HasFactory;
     protected $fillable = [
         'libelle',
-        'daterdv',
+        'date_rdv',
        
 ];
 }

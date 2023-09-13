@@ -20,7 +20,9 @@ class ModelesController extends Controller
      */
     public function modeles()
     {
-        return view('modeles');
+        $modeles = Modeles::all();
+        return view('modeles', compact('modeles'));
+
     }
 
     /**
@@ -34,7 +36,7 @@ class ModelesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function insermodeles(Request $request)
+    public function insertmodeles(Request $request)
     {
     $request->validate([
 
@@ -42,13 +44,13 @@ class ModelesController extends Controller
         'type_modele'=>'required',
         'image'=>'required',
     ]);    
-     $modeles = new modeles();
+     $modeles = new Modeles();
      $modeles->nom_modele = $request->nom_modele;
      $modeles->type_modele = $request->type_modele;
-     $modeles->image= $request->image;
-     $clients->save();
+     $modeles->image= $request->image->store('photo', 'public');
+     $modeles->save();
 
-    return redirect('ajout_modeles')->with('status', 'Le modele a été ajouté avec succes.');
+    return redirect('listemodeles')->with('status', 'Le modele a été ajouté avec succes.');
   
     }
 

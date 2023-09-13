@@ -21,7 +21,8 @@ class CouturesController extends Controller
      */
     public function coutures()
     {
-        return view('coutures');
+        $coutures = Coutures::all();
+        return view('coutures', compact('coutures'));
     }
 
     /**
@@ -41,17 +42,16 @@ class CouturesController extends Controller
 
             'montant'=>'required',
             'date_depot'=>'required',
-            'date_recuperacation'=>'required',
+            'date_recuperation'=>'required',
         ]);
     
-        $coutures = new coutures();
-        $cuoutures->montant = $request->nom;
-        $coutures->date_depot = $request->prenom;
-        $coutures->date_recuperation = $request->adresse;
-    
+        $coutures = new Coutures();
+        $coutures->montant = $request->montant;
+        $coutures->date_depot = $request->date_depot;
+        $coutures->date_recuperation = $request->date_recuperation;
         $coutures->save();
     
-        return redirect('ajout_coutures')->with('status', 'une couture a été ajouté avec succes.');
+        return redirect('listecoutures')->with('status', 'une couture a été ajouté avec succes.');
 
 
     }

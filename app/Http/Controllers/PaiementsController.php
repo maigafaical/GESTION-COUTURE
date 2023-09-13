@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\PaiementsControllerform_paiements;
+use App\Models\Paiements;
 
 class PaiementsController extends Controller
 {
@@ -13,14 +15,16 @@ class PaiementsController extends Controller
     {
         //
     }
+    public function paiements()
+    {
+        $paiements = Paiements::all();
+        return view('paiements', compact('paiements'));
+}
 
     /**
      * Show the form for creating a new resource.
      */
-    public function paiements()
-    {
-        return view('paiements');
-    }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -30,29 +34,35 @@ class PaiementsController extends Controller
         return view('ajout_paiements');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function insertionpaiments(Request $request)
+    public function insertpaiements(Request $request)
+     
     {
         $request->validate([
 
             'montant'=>'required',
-            'date_depot'=>'required',
-            'date_recuperation'=>'required',
-         
+            'acompte'=>'required',
+            'reste'=>'required',
+            'mode_paiement'=>'required',
+            'date_paiement'=>'required',
            
         ]);
 
         $paiements = new paiements();
         $paiements->montant = $request->montant;
-        $paiements->date_depot = $request->date_depot;
-        $paiements->date_recuperation = $request->date_recuperation;
+        $paiements->acompte = $request->acompte;
+        $paiements->reste = $request->acompte;
+        $paiements->mode_paiement = $request->mode_paiement;
+        $paiements->date_paiement = $request->date_paiement;
        $paiements->save();
 
-       return redirect('ajout_depenses')->with('status', 'Le paiement a été ajouté avec succes.');
+       return redirect('listepaiements')->with('status', 'Le paiement a été ajouté avec succes.');
     
+        
 
+    /**
+     * Display the specified resource.
+     */
+      
     }
 
     /**

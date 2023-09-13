@@ -24,11 +24,12 @@ return new class extends Migration
             $table->Integer('poignets');
             $table->Integer('tour_ventre');
             $table->Integer('longueur_veste');
-            $table->Integer('longueur_pantalon');
-            $table->Integer('mollet');
-            $table->date('date_mesure');
+            $table->date('date_');
            
-
+            $table->unsignedBigInteger('clients_id')->unsigned();
+            $table->foreign('clients_id')->references('id')->on('clients')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('modeles_id')->unsigned();
+            $table->foreign('modeles_id')->references('id')->on('modeles')->onDelete('cascade')->onUpdate('cascade');
 
              $table->timestamps();
         });

@@ -23,7 +23,8 @@ class DepensesController extends Controller
      */
     public function depenses()
     {
-        return view('depenses');
+        $depenses = Depenses::all();
+        return view('depenses', compact('depenses'));
     }
 
     /**
@@ -55,7 +56,7 @@ class DepensesController extends Controller
         $depenses->date = $request->date;
        $depenses->save();
 
-       return redirect('ajout_depenses')->with('status', 'La dépense a été ajouté avec succes.');
+       return redirect('depenses')->with('status', 'La dépense a été ajouté avec succes.');
     
     }
  

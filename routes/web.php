@@ -36,16 +36,16 @@ Route::post('insertion_clients',[ClientsController::class, 'insertion_clients_tr
 
 
 
-Route::get('modeles',[ModelesController::class, 'modeles'])->name('modeles');
+Route::get('listemodeles',[ModelesController::class, 'modeles'])->name('modeles');
 Route::get('ajout_modeles',[ModelesController::class, 'form_modeles'])->name('form_modeles');
-Route::post('insermodeles',[ModelesController::class, 'insermodeles']);
+Route::post('insertionmodeles',[ModelesController::class, 'insertmodeles']);
 
 
 
 
-Route::get('mesures',[MesuresController::class, 'mesures'])->name('mesures');
+Route::get('listemesures',[MesuresController::class, 'mesures'])->name('mesures');
 Route::get('ajout_mesures',[MesuresController::class, 'form_mesures'])->name('form_mesures');
-Route::post('insertmesures',[MesuresController::class, 'insertmesures']);
+Route::post('insertionmesures',[MesuresController::class, 'insertmesures']);
 
 
 
@@ -65,13 +65,13 @@ Route::post('insertdepenses',[DepensesController::class, 'insertdepenses']);
 
 Route::get('listecoutures',[CouturesController::class, 'coutures'])->name('coutures');
 Route::get('coutures',[CouturesController::class, 'form_coutures'])->name('form_coutures');
-Route::post('insercoutures',[CouturesController::class, 'insertcoutures']);
+Route::post('insertioncoutures',[CouturesController::class, 'insertcoutures']);
 
 
 
 Route::get('listepaiements',[PaiementsController::class, 'paiements'])->name('paiements');
 Route::get('paiements',[PaiementsController::class, 'form_paiements'])->name('form_paiements');
-Route::post('insertionpaiements',[PaiementsController::class, 'insertionpaiements']);
+Route::post('insertionpaiements',[PaiementsController::class, 'insertpaiements']);
 
 
 
@@ -80,7 +80,7 @@ Route::post('insertionpaiements',[PaiementsController::class, 'insertionpaiement
 
 
 
-Route::get('rendezvous',[RendezvousController::class, 'rendezvous'])->name('rendezvous');
+Route::get('listerendezvous',[RendezvousController::class, 'rendezvous'])->name('rendezvous');
 Route::get('ajout_rendezvous',[RendezvousController::class, 'form_rendezvous'])->name('form_rendezvous');
 Route::post('insertrendezvous',[RendezvousController::class, 'insertrendezvous']);
 

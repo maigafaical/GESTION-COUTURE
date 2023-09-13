@@ -23,9 +23,9 @@ class ClientsController extends Controller
      */
     public function clients()
     {
-        return view('clients');
-    }
-
+        $clients = Clients::all();
+        return view('clients', compact('clients'));
+}
     /**
      * Store a newly created resource in storage.
      */
@@ -54,7 +54,7 @@ class ClientsController extends Controller
     $clients->telephone = $request->telephone;
     $clients->save();
 
-    return redirect('ajout_clients')->with('status', 'Le client a été ajouté avec succes.');
+    return redirect('clients')->with('status', 'Le client a été ajouté avec succes.');
 
 }
 

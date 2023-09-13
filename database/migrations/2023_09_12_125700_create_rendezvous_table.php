@@ -15,8 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('libelle');
             $table->date('date_rdv');
-           
-            $table->timestamps();
+
+            $table->unsignedBigInteger('clients_id')->unsigned();
+            $table->foreign('clients_id')->references('id')->on('clients')->onDelete('cascade')->onUpdate('cascade');
+          $table->timestamps();
+
+
+
+
         });
     }
 

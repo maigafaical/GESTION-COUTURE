@@ -11,23 +11,32 @@
 
 
             <div style="text-align: center">
-                <h4>LISTE DES MODELES</h4>
+                <h4>GALERIE DES MODELES</h4>
             </div>
 
             <section class="contenair mt-1">
                 <table class="table table-bordered">
 
+                    
                     <tbody>
-                        <tr>
+                        @foreach ($modeles as $mod)
+                        <div class="card" style="width: 10rem;">
+                     <img src="{{ asset('storage') . '/' .  $mod->image }}" alt="">
+                            <div class="card-body">
+                        <p class="card-text">{{ $mod->nom_modele }}</p>
+                        <p class="card-text">{{ $mod->type_model}} </p>
 
-                            <td>type_modele</td>
-                            <td>nom_modele</td>
-                            <td>image</td>
-
-
-                        </tr>
+                            </div>
+                           </div>
+                           
+                        @endforeach
                     </tbody>
-
+    
+    
+    
+    
+                
+    
 
 
 

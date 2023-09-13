@@ -21,8 +21,9 @@ class PersonnelsController extends Controller
      */
     public function personnels()
     {
-        return view('personnels');
-    }
+        $personnels = Personnels::all();
+        return view('personnels', compact('personnels'));
+}
 
     /**
      * Store a newly created resource in storage.
@@ -55,7 +56,7 @@ class PersonnelsController extends Controller
         $personnels->poste = $request->poste;
         $personnels->save();
     
-        return redirect('ajout_personnels')->with('status', 'Le personnel a été ajouté avec succes.');
+        return redirect('personnels')->with('status', 'Le personnel a été ajouté avec succes.');
     
         //
     }

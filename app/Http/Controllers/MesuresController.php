@@ -20,36 +20,48 @@ class MesuresController extends Controller
      * Show the form for creating a new resource.
      */
     public function mesures()
-    {
-        return view('mesures');
+
+    { $mesures= Mesures::all();
+        return view('mesures', compact('mesures'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
     // ...
+
+    public function form_mesures(Request $request)
+    {
+        return view('ajout_mesures');
+    }
+
+
+   // ...
+
    public function  insertmesures(Request $request)
+
 
    {
     $request->validate([
 
       
-        'poitrine'=>'required',
-        'taille_robe'=>'required',
-        'bassins'=>'required',
-        'longueur'=>'required',
-        'genoux'=>'required',
-        'manches'=>'required',
-        'hanches'=>'required',
-        'epaules'=>'required',
-        'poignets'=>'required',
-        'tour_ventre'=>'required',
-        'longueur_veste'=>'required',
-        'date'=>'required',
+        'poitrine',
+        'taille_robe',
+        'bassins',
+        'longueur',
+        'genoux',
+        'manches',
+        'hanches',
+        'epaules',
+        'poignets',
+        'tour_ventre',
+        'longueur_veste',
+        'date_',
+        'clients_id',
         
     ]);
 
-    $mesures = new mesures();
+    $mesures = new Mesures();
   
     $mesures->poitrine = $request->poitrine;
     $mesures->taille_robe= $request->taille_robe;
@@ -60,14 +72,14 @@ class MesuresController extends Controller
     $mesures->hanches= $request->hanches;
     $mesures->epaules= $request->epaules;
     $mesures->poignets= $request->poignets;
-    $mesures->tour_ventre= $request->tour_ventre;
+    $mesures->tour_ventre= $request->tour_ventre;    
     $mesures->longueur_veste= $request->longueur_veste;
-    $mesures->date= $request->date;
-
+    $mesures->date_= $request->date_;
+    $mesures->clients_id= $request->clients_id;
 
     $mesures->save();
 
-    return redirect('ajout_mesures')->with('status', 'Les mesures ont été ajouté avec succes.');
+    return redirect('listemesures')->with('status', 'Les mesures ont été ajouté avec succes.');
 
 }
 

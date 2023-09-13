@@ -15,11 +15,11 @@
 
          <tbody>
               <tr>
-                
+                <td>Numéro</td>
                 <td>Libelle</td>
                 <td>Montant</td>
                 <td>Date</td>
-                
+                <td>Actions</td>
               
 
                 
@@ -27,6 +27,20 @@
             </tbody>
              
             
-           
+            @foreach ($depenses as $depens)
+                        <tr>
+                            <td>{{ $depens->id }}</td>
+                            <td>{{ $depens->libelle }}</td>
+                            <td>{{ $depens->montant }}</td>
+                            <td>{{ $depens->date }}</td>
+                           
+                            <td>
+                            <a href="#"{{ $depens->id }} class="btn btn-info">Modifier</a>
+                            <a href="#"{{ $depens->id }} class="btn btn-danger">supprimer</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+                </table>
     
    @endsection

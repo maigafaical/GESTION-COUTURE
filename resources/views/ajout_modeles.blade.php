@@ -4,7 +4,7 @@
     <body style="background-color: #0BE0FD">
 
 
-
+       
 
 
         <div>
@@ -21,39 +21,42 @@
             </ul>
             <h3>AJOUTER UN MODELE</h3>
 
-            <form method="POST" action="insermodeles">
-                @csrf
+            <div class="container p-2 bg-danger m-1">
 
-              
-                    <div class="row m-3">
+                <form action="insertionmodeles" method="POST" class="row g-3 form-group" enctype="multipart/form-data">
+                    @csrf
+                    <section class="contenair p-2 bg-danger mt-3 m-3">
+                        <div class="row mt-3">
 
-                        <div>
-                            <div class="col-lg-6">
-                                <input type="text" name="nom " class="form-control" placeholder="nom modele">
-                            </div>
-                            <div class="col-lg-6">
-                                <label class="text-danger" for="" required></label>
-                                <select class="form-control" name="user">
-                                    <option value="">Type modele...</option>
-                                    <option value="">Enfant...</option>
-                                    <option value="">Adulte...</option>
-                            </div>
-                        </div>   
-                            </select>
-                            <div class="col-lg-6 m-3">
-                                <input name="input-b2" type="file" class="file" class="form-control"
-                                    data-show-preview = "false" >
-                            </div>
+                            <div class="row mt-3">
+                                <div class="col-lg-6">
+                                    <input type="text" name="nom_modele" class="form-control"
+                                        placeholder="Nom du modèle">
+                                    </div>
+                                    
+                                    <div class="col-lg-6">
+                                        <input type="text" name="type_modele" class="form-control" placeholder="Nom du modèle">
+                                    </div>
+                                </div>
 
+                            <div class="row mt-3">
+                                <div class="col-lg-6">
+                                    <input type="file" name="image" class="form-control" placeholder="image">
+                                </div>
 
-
-
-                            <div class="col-auto">
-                                <button type="submit" class="btn btn-danger text-light m-2">Ajouter</button>
                             </div>
 
-            </form>
 
+                            <div class="row m-3">
+                                <div class="col-6">
+                                    <div class="col-auto">
+                                        <button type="submit"  class="btn btn-dark text-light mb-2">ajouter</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </section>
 
-        </div>
+                  </form>
+  </div>
+                </div>
     @endsection

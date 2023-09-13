@@ -19,16 +19,33 @@
 
            <tbody>
                 <tr>
-                  <td>numero</td>
-                  <td>nom</td>
-                  <td>prenom</td>
-                  <td>adresse</td>
-                  <td>telephone</td>
+                  <td>Numero</td>
+                  <td>Nom</td>
+                  <td>Prénom</td>
+                  <td>Adresse</td>
+                  <td>Téléphone</td>
+                  <td>Actions</td>
                 
 
 
                 </tr>
               </tbody> 
+
+              <tbody>
+                @foreach ($clients as $cli)
+                    <tr>
+                        <td>{{ $cli->id }}</td>
+                        <td>{{ $cli->nom }}</td>
+                        <td>{{ $cli->prenom }}</td>
+                        <td>{{ $cli->adresse }}</td>
+                        <td>{{ $cli->telephone }}</td>
+                        <td>
+                          <a href="#"{{ $cli->id }} class="btn btn-info">Modifier</a>
+                          <a href="#"{{ $cli->id }} class="btn btn-danger">supprimer</a>
+                        </td>
+                   </tr> 
+                @endforeach
+              </tbody>
              
             
             

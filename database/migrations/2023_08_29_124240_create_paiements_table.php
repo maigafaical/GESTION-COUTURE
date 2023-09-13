@@ -18,7 +18,8 @@ return new class extends Migration
             $table->Integer('reste');
             $table->string('mode_paiement');
             $table->date('date_paiement');
-          
+            $table->unsignedBigInteger('coutures_id')->unsigned();
+            $table->foreign('coutures_id')->references('id')->on('coutures')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });
