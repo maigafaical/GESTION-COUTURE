@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controller\MesuresControllerform_Mesures;
 use App\Models\Mesures;
-
+use App\Models\Clients;
+use App\Models\Modeles;
 class MesuresController extends Controller
 {
     /**
@@ -32,7 +33,10 @@ class MesuresController extends Controller
 
     public function form_mesures(Request $request)
     {
-        return view('ajout_mesures');
+        $clients = Clients::all();
+        $modele = Modeles::all();
+        
+        return view('ajout_mesures', compact('clients', 'modele'));
     }
 
 
@@ -58,6 +62,7 @@ class MesuresController extends Controller
         'longueur_veste',
         'date_',
         'clients_id',
+        'modeles_id',
         
     ]);
 
@@ -76,6 +81,7 @@ class MesuresController extends Controller
     $mesures->longueur_veste= $request->longueur_veste;
     $mesures->date_= $request->date_;
     $mesures->clients_id= $request->clients_id;
+    $mesures->modeles_id= $request->modeles_id;
 
     $mesures->save();
 

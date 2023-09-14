@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\PaiementsControllerform_paiements;
 use App\Models\Paiements;
+use App\Models\Coutures;
 
 class PaiementsController extends Controller
 {
@@ -31,7 +32,10 @@ class PaiementsController extends Controller
      */
     public function form_paiements(Request $request)
     {
-        return view('ajout_paiements');
+        $couture = Coutures::all();
+       
+        
+        return view('ajout_paiements', compact('couture'));
     }
 
     public function insertpaiements(Request $request)
@@ -44,6 +48,7 @@ class PaiementsController extends Controller
             'reste'=>'required',
             'mode_paiement'=>'required',
             'date_paiement'=>'required',
+            'coutures_id'=>'required',
            
         ]);
 
@@ -53,6 +58,7 @@ class PaiementsController extends Controller
         $paiements->reste = $request->acompte;
         $paiements->mode_paiement = $request->mode_paiement;
         $paiements->date_paiement = $request->date_paiement;
+        $paiements->coutures_id = $request->coutures_id;
        $paiements->save();
 
        return redirect('listepaiements')->with('status', 'Le paiement a été ajouté avec succes.');

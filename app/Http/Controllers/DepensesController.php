@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\depensesControllerform_depenses;
+use App\Http\Controllers\depensesController;
 use App\Models\depenses;
-
+use App\Models\Personnels;
 
 
 class DepensesController extends Controller
@@ -32,7 +32,8 @@ class DepensesController extends Controller
      */
     public function form_depenses(Request $request)
     {
-        return view('ajout_depenses');
+        $personnels= Personnels::all();
+        return view('ajout_depenses' , compact('personnels'));
     }
 
 
@@ -46,6 +47,7 @@ class DepensesController extends Controller
             'libelle'=>'required',
             'montant'=>'required',
             'date'=>'required',
+            'personnels_id'=>'required',
          
            
         ]);
@@ -54,6 +56,7 @@ class DepensesController extends Controller
         $depenses->libelle = $request->libelle;
         $depenses->montant = $request->montant;
         $depenses->date = $request->date;
+        $depenses->personnels_id = $request->personnels_id;
        $depenses->save();
 
        return redirect('depenses')->with('status', 'La dépense a été ajouté avec succes.');

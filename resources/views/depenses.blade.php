@@ -19,6 +19,7 @@
                 <td>Libelle</td>
                 <td>Montant</td>
                 <td>Date</td>
+                <td>Nom du personnel</td>
                 <td>Actions</td>
               
 
@@ -33,6 +34,7 @@
                             <td>{{ $depens->libelle }}</td>
                             <td>{{ $depens->montant }}</td>
                             <td>{{ $depens->date }}</td>
+                            <td>{{ $depens->Personnel->nom }} {{ $depens->Personnel->prenom }}</td>
                            
                             <td>
                             <a href="#"{{ $depens->id }} class="btn btn-info">Modifier</a>

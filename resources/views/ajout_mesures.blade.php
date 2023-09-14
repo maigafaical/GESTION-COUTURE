@@ -87,22 +87,31 @@
                                     <input type="date" name="date_" class="form-control" placeholder="Date"> 
                                   </div>
 
-                                  <div class="col-lg-6 mt-3">
-                                    <div class="form-group">
-                                        <label for="">Choisir le client</label>
-                                        <select name="clients_id " class="form-control" required>
-                                            <option value="">Choisissez le client</option>
-                                            @foreach ($clients as $cli)
-                                                <option value="{{ $cli->id }}">{{ $cli->nom }}</option>
-                                                <option value="{{ $cli->id }}">{{ $cli->prenom }}</option>
-                                            @endforeach
-                                        </select>
-                          </div>
+                                  <div class="row mt-4">
+                                    <div class="col-lg-6">
+    
+                                      <select class="champ col-lg-12" style="height: 150%" name="clients_id">
   
+                                          <option>Selectionner un client</option>;
+                                          @foreach ($clients as $cli)
+                                              <option value="{{ $cli->id }}">{{ $cli->nom }}</option>
+                                              <option value="{{ $cli->id }}">{{ $cli->prenom }}</option>
+                                          @endforeach
+                                      </select>
+  
+                                  </div>
+                                  <div class="col-lg-6">
 
-
-
-                        </div>
+                                    <select class="champ col-lg-12" style="height: 150%" name="modeles_id">
+      
+                                        <option>Selectionner un modele</option>;
+                                        @foreach ($modele as $mod)
+                                            <option value="{{ $mod->id }}">{{ $mod->nom_modele }}</option>
+                                        @endforeach
+                                    </select>
+      
+                      </div>
+                                </div>
 
 
 

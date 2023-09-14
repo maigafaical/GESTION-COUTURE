@@ -26,19 +26,27 @@
 
             <section class="">
                 <div class="row mt-3">
-                   
-                    
-                        <div class="col-lg-6">
+                   <div class="col-lg-6">
                             <input type="text" name="libelle" class="form-control" placeholder="libelle">
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="float" name="montant" class="form-control" placeholder="montant">
                         </div>
                     </div>
 
                     <div class="row mt-3">
                         <div class="col-lg-6">
-                            <input type="float" name="montant" class="form-control" placeholder="montant">
+                            <input type="date" name="date" class="form-control" placeholder="date">
                         </div>
                         <div class="col-lg-6">
-                            <input type="date" name="date" class="form-control" placeholder="date">
+                            <select class="champ col-lg-12" style="height: 150%" name="personnels_id">
+
+                                <option>Selectionner un personnel</option>;
+                                @foreach ($personnels as $pers)
+                                    <option value="{{ $pers->id }}"> {{ $pers->nom }} {{ $pers->prenom }}</option>
+                                    
+                                @endforeach
+                            </select>
                         </div>
                             <div class="row m-3">
                                 <div class="col-3">

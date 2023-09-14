@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\CouturesControllerform_coutures;
+use App\Http\Controllers\CouturesController;
 use App\Models\Coutures;
+use App\Models\Modeles;
+use App\Models\Clients;
+use Illuminate\Http\Request;
 
 class CouturesController extends Controller
 {
@@ -30,7 +32,9 @@ class CouturesController extends Controller
      */
     public function form_coutures(Request $request)
     {   
-        return view('ajout_coutures');
+        $modele = Modeles::all();
+        $client = Clients::all();
+        return view('ajout_coutures', compact('modele', 'client'));
     }
 
     /**
@@ -40,15 +44,21 @@ class CouturesController extends Controller
     {
         $request->validate([
 
-            'montant'=>'required',
+            'description'=>'required',
             'date_depot'=>'required',
             'date_recuperation'=>'required',
+            'clients_id'=>'required',
+            'modeles_id'=>'required',
+            'users_id'=>'required',
         ]);
     
         $coutures = new Coutures();
-        $coutures->montant = $request->montant;
+        $coutures->description= $request->description;
         $coutures->date_depot = $request->date_depot;
         $coutures->date_recuperation = $request->date_recuperation;
+        $coutures->clients_id = $request->clients_id;
+        $coutures->modeles_id = $request->modeles_id;
+        $coutures->users_id = $request->users_id;
         $coutures->save();
     
         return redirect('listecoutures')->with('status', 'une couture a été ajouté avec succes.');

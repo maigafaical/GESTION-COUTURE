@@ -33,6 +33,8 @@
                    <td>Tour-ventre</td>
                    <td>Longueur-veste</td>
                    <td>Date-mesure</td>
+                   <td>Nom du Client</td>
+                   <td>Nom du Modèle</td>
                    <td>Actions</td>
             
             </tr>
@@ -54,6 +56,8 @@
                         <td>{{ $mesu->tour_ventre }}</td>
                         <td>{{ $mesu->longueur_veste }}</td>
                         <td>{{ $mesu->date_ }}</td>
+                        <td>{{ $mesu->Client->nom }} {{ $mesu->Client->prenom }} </td>
+                        <td>{{ $mesu->Modele->nom_modele}}</td>
                        <td>
                         <a href="#"{{ $mesu->id }} class="btn btn-info">Modifier</a>
                           <a href="#"{{ $mesu->id }} class="btn btn-danger">supprimer</a>

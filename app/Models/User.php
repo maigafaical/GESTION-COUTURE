@@ -42,4 +42,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    function Coutures(){
+        return $this->HasOne(Coutures::class, 'modeles_id');
+    }
+    
 }

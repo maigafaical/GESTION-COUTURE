@@ -50,6 +50,17 @@
                         <div class="col-lg-6 mt-3">
                             <input type="date" name="date_paiement" class="form-control" placeholder="date_paiement">
                         </div>
+                        <div class="col-lg-6 mt-3">
+
+                            <select class="form-control col-lg-12" name="coutures_id" placeholder="Informations">
+
+                                <option>Selectionner une couture</option>;
+                                @foreach ($couture as $cou)
+                                    <option value="{{ $cou->id }}">{{ $cou->description}}</option>
+                                @endforeach
+                            </select>
+
+                        </div>
 
 
                             <div class="row m-3">

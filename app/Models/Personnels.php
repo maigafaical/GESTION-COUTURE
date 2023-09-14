@@ -15,4 +15,8 @@ class Personnels extends Model
         'telephone',
         'poste',
 ];
+
+function Depense(){
+    return $this->HasOne(Depenses::class);
+}
 }

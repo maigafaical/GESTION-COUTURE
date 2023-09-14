@@ -16,7 +16,7 @@
          <tbody>
               <tr>
                 <td>Numero</td>
-                <td>Montant</td>
+                <td>Description</td>
                 <td>Date depot</td>
                 <td>Date recuperation</td>
                 <td>Modele</td>
@@ -29,11 +29,11 @@
               @foreach ($coutures as $cou)
                   <tr>
                     <td>{{ $cou->id }}</td>
-                    <td>{{ $cou->montant}}</td>
+                    <td>{{ $cou->description}}</td>
                     <td>{{ $cou->date_depot }}</td>
                     <td>{{ $cou->date_recuperation }}</td>
-                    <td>{{ $cou->modeles_id }}</td>
-                    <td>{{ $cou->clients_id }}</td>
+                    <td>{{ $cou->Modele->nom_modele }}</td>  
+                    <td>{{ $cou->Client->nom }} {{ $cou->Client->prenom }}</td>
                       <td>
                       <a href="#"{{ $cou->id }} class="btn btn-info">Modifier</a>
                       <a href="#"{{ $cou->id }} class="btn btn-danger">supprimer</a>

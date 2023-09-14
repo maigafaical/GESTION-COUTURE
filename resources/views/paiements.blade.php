@@ -21,6 +21,7 @@
                 <td>Reste</td>
                 <td>Mode de paiements</td>
                 <td>Date de paiements</td>
+                <td>Informations</td>
                 <td>Actions</td>
 
               
@@ -39,6 +40,7 @@
                       <td>{{ $pai->reste }}</td>
                       <td>{{ $pai->mode_paiement }}</td>
                       <td>{{ $pai->date_paiement }}</td>
+                      <td>{{ $pai->Couture->description}}-</td>
                       <td>
                         <a href="#"{{ $pai->id }} class="btn btn-info">Modifier</a>
                         <a href="#"{{ $pai->id }} class="btn btn-danger">supprimer</a>
