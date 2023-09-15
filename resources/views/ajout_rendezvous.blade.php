@@ -17,7 +17,7 @@
     </ul>
 
     <div class="text-dark text-center">
-        <h3>AJOUTER UN RENDEZ-VOUS </h3>
+        <h3>Ajouter un nouveau rendez-vous </h3>
            </div>
   
     <div>
@@ -27,14 +27,29 @@
             <section class="">
               <div class="row mt-3">
                         <div class="col-lg-6">
-                            <input type="text" name="libelle" class="form-control" placeholder="libelle">
+                            <input type="text" name="libelle" class="form-control" placeholder="Libellé">
                         </div>
+                        <div class="col-lg-6">
+                            <input type="date" name="date_rdv" class="form-control" placeholder="Date du rendez_vous">
+                           </div>
                     </div>
 
                     <div class="row mt-3">
-                        <div class="col-lg-6">
-                            <input type="date" name="date_rdv" class="form-control" placeholder="date_rdv">
-                           </div>
+                        
+                           <div class="col-lg-6">
+    
+                            <select class="form-control"  name="clients_id" >
+
+                                <option>Selectionner un client</option>;
+                                @foreach ($client as $cli)
+                                    <option value="{{ $cli->id }}">{{ $cli->nom  }} {{ $cli->prenom }}</option>
+        
+                                @endforeach
+                            </select>
+
+                        </div>
+                    </div>
+
                             <div class="row m-3">
                                 <div class="col-3">
                                     <div class="col-auto">

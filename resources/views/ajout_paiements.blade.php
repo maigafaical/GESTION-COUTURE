@@ -17,7 +17,7 @@
     </ul>
 
     <div class="text-dark text-center">
-        <h3>AJOUTER UN PAIEMENT </h3>
+        <h3>Ajouter un nouveau paiement </h3>
            </div>
   
     <div>
@@ -32,23 +32,23 @@
 
                     <div class="row mt-3">
                         <div class="col-lg-6">
-                            <input type="float" name="montant" class="form-control" placeholder="montant">
+                            <input type="float" name="montant" class="form-control" placeholder="Montant">
                         </div>
 
                         <div class="col-lg-6">
-                            <input type="int" name="acompte" class="form-control" placeholder="acompte">
+                            <input type="int" name="acompte" class="form-control" placeholder="Acompte">
                         </div>
 
 
                         <div class="col-lg-6 mt-3">
-                            <input type="int" name="reste" class="form-control" placeholder="reste">
+                            <input type="int" name="reste" class="form-control" placeholder="Reste">
                         </div>
 
                         <div class="col-lg-6 mt-3">
-                            <input type="texte" name="mode_paiement" class="form-control" placeholder="mode_paiement">
+                            <input type="texte" name="mode_paiement" class="form-control" placeholder="Mode de paiement">
                         </div>
                         <div class="col-lg-6 mt-3">
-                            <input type="date" name="date_paiement" class="form-control" placeholder="date_paiement">
+                            <input type="date" name="date_paiement" class="form-control" placeholder="Date de paiement">
                         </div>
                         <div class="col-lg-6 mt-3">
 

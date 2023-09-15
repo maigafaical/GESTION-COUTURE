@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Mesures;
 use App\Models\Coutures;
 use App\Models\Paiements;
-
+use App\Models\Rendezvous;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Clients extends Model
@@ -29,5 +29,9 @@ function Mesure(){
 
 function Paiements(){
     return $this->HasOne(Paiements::class);   
+}
+
+function Rendezvous(){
+    return $this->HasOne(Rendezvous::class);   
 }
 }

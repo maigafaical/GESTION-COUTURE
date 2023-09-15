@@ -19,7 +19,7 @@
 
            <tbody>
                 <tr>
-                  <td>Numero</td>
+                  <td>Numéro</td>
                   <td>Nom</td>
                   <td>Prénom</td>
                   <td>Adresse</td>

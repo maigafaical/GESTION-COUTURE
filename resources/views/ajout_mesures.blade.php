@@ -19,7 +19,7 @@
 
 
     <div style="text-align: center">
-        <h3>AJOUTER MESURES</h3>
+        <h3>Ajouter une nouvelle mesure</h3>
            </div>
           
            <form method="POST" action="insertionmesures">
@@ -90,19 +90,19 @@
                                   <div class="row mt-4">
                                     <div class="col-lg-6">
     
-                                      <select class="champ col-lg-12" style="height: 150%" name="clients_id">
+                                      <select class="form-control"  name="clients_id">
   
                                           <option>Selectionner un client</option>;
                                           @foreach ($clients as $cli)
-                                              <option value="{{ $cli->id }}">{{ $cli->nom }}</option>
-                                              <option value="{{ $cli->id }}">{{ $cli->prenom }}</option>
+                                              <option value="{{ $cli->id }}">{{ $cli->nom }} {{ $cli->prenom }}</option>
+                                              
                                           @endforeach
                                       </select>
   
                                   </div>
                                   <div class="col-lg-6">
 
-                                    <select class="champ col-lg-12" style="height: 150%" name="modeles_id">
+                                    <select class="form-control"  name="modeles_id">
       
                                         <option>Selectionner un modele</option>;
                                         @foreach ($modele as $mod)

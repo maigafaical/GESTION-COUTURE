@@ -16,11 +16,11 @@
                 <tbody>
                     <tr>
                         <td>Numero</td>
-                        <td>nom</td>
-                        <td>prenom</td>
-                        <td>adresse</td>
-                        <td>telephone</td>
-                        <td>poste</td>
+                        <td>Nom</td>
+                        <td>Prénom</td>
+                        <td>Adresse</td>
+                        <td>Téléphone</td>
+                        <td>Poste</td>
                         <td>Actions</td>
 
 

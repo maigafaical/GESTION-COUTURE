@@ -17,7 +17,7 @@
     </ul>
 
     <div class="text-dark text-center">
-        <h3>AJOUTER UNE DEPENSE </h3>
+        <h3>Ajouter une nouvelle dépense </h3>
            </div>
   
     <div>
@@ -27,19 +27,19 @@
             <section class="">
                 <div class="row mt-3">
                    <div class="col-lg-6">
-                            <input type="text" name="libelle" class="form-control" placeholder="libelle">
+                            <input type="text" name="libelle" class="form-control" placeholder="Motif de la dépense">
                         </div>
                         <div class="col-lg-6">
-                            <input type="float" name="montant" class="form-control" placeholder="montant">
+                            <input type="float" name="montant" class="form-control" placeholder="Montant">
                         </div>
                     </div>
 
                     <div class="row mt-3">
                         <div class="col-lg-6">
-                            <input type="date" name="date" class="form-control" placeholder="date">
+                            <input type="date" name="date" class="form-control" placeholder="Date">
                         </div>
                         <div class="col-lg-6">
-                            <select class="champ col-lg-12" style="height: 150%" name="personnels_id">
+                            <select class="form-control"  name="personnels_id">
 
                                 <option>Selectionner un personnel</option>;
                                 @foreach ($personnels as $pers)

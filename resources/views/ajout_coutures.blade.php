@@ -17,7 +17,7 @@
             </ul>
 
             <div class="text-dark text-center">
-                <h3>AJOUTER UNE COUTURE </h3>
+                <h3>Ajouter une nouvelle couture </h3>
             </div>
 
             <div>
@@ -47,7 +47,7 @@
                                 placeholder="date_recuperation">
                         </div>
 
-
+                  
                         <div class="col-lg-6">
 
                             <select class="form-control" name="modeles_id">
@@ -60,8 +60,8 @@
 
                         </div>
                     </div>
-            
-                        <div class="col-lg-6 m-3">
+                     <div class="row m-2">
+                        <div class="col-lg-6 ">
                             <select class="form-control" name="clients_id">
 
                                 <option>Selectionner un client</option>;
@@ -72,7 +72,7 @@
                             </select>
 
                         </div>
-           
+                    </div>
 
 
 

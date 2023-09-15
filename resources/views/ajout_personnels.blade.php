@@ -20,7 +20,7 @@
 @endforeach
 </ul>
 
-        <h4>Remplissez le formulaire personnel</h4>
+        <h4>Ajouter un nouveau personnel</h4>
 
         <form method="POST" action="insertpersonnels">
             @csrf
@@ -30,23 +30,24 @@
 
                     <div class="row mt-3">
                         <div class="col-lg-6">
-                            <input type="text" name="nom" class="form-control" placeholder="nom">
+                            <input type="text" name="nom" class="form-control" placeholder="Nom">
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" name="prenom" class="form-control" placeholder="prenom">
+                            <input type="text" name="prenom" class="form-control" placeholder="Prénom">
                         </div>
                     </div>
 
                     <div class="row mt-3">
                         <div class="col-lg-6">
-                            <input type="text" name="adresse" class="form-control" placeholder="adresse">
+                            <input type="text" name="adresse" class="form-control" placeholder="Adresse">
                         </div>
                         <div class="col-lg-6">
-                            <input type="int" name="telephone" class="form-control" placeholder="telephone">
+                            <input type="int" name="telephone" class="form-control" placeholder="Téléphone">
                         </div>
                     </div>
+                    <div class="row" >
                     <div class="col-lg-6 mt-3">
-                        <input type="text" name="poste" class="form-control" placeholder="poste">
+                        <input type="text" name="poste" class="form-control" placeholder="Poste">
                     </div>
                 </div>
 

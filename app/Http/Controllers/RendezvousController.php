@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\RendezvousControllerform_rendezvous;
 use App\Models\Rendezvou;
-
+use App\Models\Clients;
 
 
 class RendezvousController extends Controller
@@ -31,8 +31,9 @@ class RendezvousController extends Controller
      * Store a newly created resource in storage.
      */
     public function form_rendezvous(Request $request)
-    {
-        return view('ajout_rendezvous');
+    {   
+        $client = Clients::all();
+        return view('ajout_rendezvous', compact('client'));
     }
 
     /**
@@ -44,12 +45,14 @@ class RendezvousController extends Controller
 
         'libelle'=>'required',
         'date_rdv'=>'required',
+        'clients_id'=>'required',
 
     ]);
     
     $rendezvous = new rendezvou();
     $rendezvous->libelle = $request->libelle;
     $rendezvous->date_rdv = $request->date_rdv;
+    $rendezvous->clients_id = $request->clients_id;
 
     $rendezvous->save();
 

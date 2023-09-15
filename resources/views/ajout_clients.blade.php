@@ -19,7 +19,7 @@
         <li class="alert alert-danger"> {{ $error }}</li>
     @endforeach
 </ul>
-        <h4>Remplissez le formulaire</h4>
+        <h4>Ajouter un nouveau client</h4>
 
         <form method="POST" action="insertion_clients">
             @csrf
@@ -29,19 +29,19 @@
                    
                     <div class="row mt-3">
                         <div class="col-lg-6">
-                            <input type="text" name="nom" class="form-control" placeholder="nom">
+                            <input type="text" name="nom" class="form-control" placeholder="Nom">
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" name="prenom" class="form-control" placeholder="prenom">
+                            <input type="text" name="prenom" class="form-control" placeholder="Prénom">
                         </div>
                     </div>
 
                     <div class="row mt-3">
                         <div class="col-lg-6">
-                            <input type="text" name="adresse" class="form-control" placeholder="adresse">
+                            <input type="text" name="adresse" class="form-control" placeholder="Adresse">
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" name="telephone" class="form-control" placeholder="telephone">
+                            <input type="text" name="telephone" class="form-control" placeholder="Téléphone">
                         </div>
                     </div>
 

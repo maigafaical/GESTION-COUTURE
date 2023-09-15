@@ -40,7 +40,7 @@
                       <td>{{ $pai->reste }}</td>
                       <td>{{ $pai->mode_paiement }}</td>
                       <td>{{ $pai->date_paiement }}</td>
-                      <td>{{ $pai->Couture->description}}-</td>
+                      <td>{{ $pai->Couture->description ?? 'Boubou de MAIGA FAICAL'}}</td>
                       <td>
                         <a href="#"{{ $pai->id }} class="btn btn-info">Modifier</a>
                         <a href="#"{{ $pai->id }} class="btn btn-danger">supprimer</a>

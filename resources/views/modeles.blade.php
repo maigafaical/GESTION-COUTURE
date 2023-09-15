@@ -20,7 +20,7 @@
                     
                     <tbody>
                         @foreach ($modeles as $mod)
-                        <div class="card" style="width: 10rem;">
+                        <div class="card rounded float-start m-3" style="width: 10rem;">
                      <img src="{{ asset('storage') . '/' .  $mod->image }}" alt="">
                             <div class="card-body">
                         <p class="card-text">{{ $mod->nom_modele }}</p>

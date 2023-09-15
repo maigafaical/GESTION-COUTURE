@@ -15,9 +15,10 @@
 
          <tbody>
               <tr>
-                <td>Numero</td>
+                <td>Numéro</td>
                 <td>Libelle</td>
-                <td>Date_rdv</td>
+                <td>Date du rendez-vous</td>
+                <td>Nom du client</td>
                 <td>Actions</td>
               
 
@@ -32,6 +33,7 @@
                       <td>{{ $rdv->id }}</td>
                       <td>{{ $rdv->libelle }}</td>
                       <td>{{ $rdv->date_rdv }}</td>
+                      <td>{{ $rdv->client->nom ?? 'MAIGA' }} {{ $rdv->client->prenom ??'FAICAL' }}</td>
                      <td>
                       <a href="#"{{ $rdv->id }} class="btn btn-info">Modifier</a>
                         <a href="#"{{ $rdv->id }} class="btn btn-danger">supprimer</a>
